@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
+    <link rel="manifest" href="manifest.json">
+
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | Pivovara_Test</title>
@@ -9,16 +11,18 @@
     <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
     <script>
-      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/beer_game.json", {onProgress: UnityProgress});
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/beer_game.json");
+      unityInstance.SetFullscreen(1)
     </script>
   </head>
   <body>
+    <div>
     <div class="webgl-content">
-      <div id="unityContainer" style="width: 960px; height: 600px"></div>
-      <div class="footer">
-        <div class="webgl-logo"></div>
-        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
-        <div class="title">Pivovara_Test</div>
+    <!-- <div class="webgl-content" style="transform:rotate(90deg);margin:0 auto; "> -->
+      <div id="unityContainer" style="width: 100vw; height: 100vh"></div>
+      <!-- <div id="unityContainer" style="width: 960px; height: 600px;"></div> -->
+      <!-- <div id="unityContainer" style="width: 960px; height: 600px; transform:rotate(90deg);"></div> -->
+    </div>
       </div>
     </div>
   </body>
